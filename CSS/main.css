@@ -43,12 +43,12 @@ body{
 .wrapper{
   display: grid;
   grid-template-rows: auto 1fr auto;
-  min-height: 100vh;
+  min-height: 100dvh;
 }
 .container{
   margin: 0 auto;
   max-width: 1600px;
-  padding-top:clamp(1rem, 2vw, 2rem);
+  padding-top:clamp(1rem, 2dvw, 2rem);
   text-align: center;
 }
 .hero-header-container{
@@ -61,16 +61,16 @@ body{
   background-repeat: no-repeat;
   display: grid;
   grid-template-rows: auto auto auto;
-  row-gap: clamp(3rem, 6.66vw, 8rem);
+  row-gap: clamp(3rem, 6.66dvw, 8rem);
   color: white;
-  padding-top: clamp(5rem, 10vw, 12rem);
+  padding-top: clamp(5rem, 10dvw, 12rem);
   text-align: center;
 }
 .title{
   padding-inline: 1rem;
 }
 .logo{
- font-size: clamp(2.5rem, 4vw, 5rem);
+ font-size: clamp(2.5rem, 4dvw, 5rem);
  font-weight: bold;
  letter-spacing: 0.2rem;
  }
@@ -90,27 +90,27 @@ body{
   100% { transform: translateY(0); }
 }
 h1{
-  font-size: clamp(1.4rem, 2vw, 2rem);
+  font-size: clamp(1.4rem, 2dvw, 2rem);
 }
 h2{
-  font-size: clamp(1.1rem, 1.5vw, 1.5rem);
+  font-size: clamp(1.1rem, 1.5dvw, 1.5rem);
 }
 h3{
-  font-size: clamp(1.8rem, 2vw, 3rem);
+  font-size: clamp(1.8rem, 2dvw, 3rem);
   font-weight: bolder;
   text-align: center;
-  line-height: clamp(2.2rem, 3vw, 4rem);
+  line-height: clamp(2.2rem, 3dvw, 4rem);
 }
 h4{
   font-weight:bold;
-  font-size: clamp(1.3rem, 1.5vw, 1.7rem);
+  font-size: clamp(1.3rem, 1.5dvw, 1.7rem);
 }
 .hero-buttons-container{
   display: grid;
   grid-template-columns: repeat(2, auto);
   justify-content: center;
-  gap: clamp(1rem, 2vw, 3rem);
-  font-size: clamp(1rem, 1vw, 1.5rem);
+  gap: clamp(1rem, 2dvw, 3rem);
+  font-size: clamp(1rem, 1dvw, 1.5rem);
   text-align: center;
   }
 .btn-primary,
@@ -119,8 +119,8 @@ h4{
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  height: clamp(2.2rem, 2.4vw, 3rem);
-  width: clamp(12rem, 12vw, 14rem);
+  height: clamp(2.2rem, 2.4dvw, 3rem);
+  width: clamp(12rem, 12dvw, 14rem);
   padding: 0.5rem;
 }
 .btn-primary{
@@ -138,25 +138,25 @@ main{
   color: #4a148c;
 }
 .submain-title{
-  margin-bottom: clamp(1rem, 1vw, 1.5rem);
+  margin-bottom: clamp(1rem, 1dvw, 1.5rem);
 }
 .offer-cards{
   text-align: start;
-  padding: clamp(1rem, 2vw, 2rem);
+  padding: clamp(1rem, 2dvw, 2rem);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-  gap: clamp(1rem, 2vw, 2rem);
+  gap: clamp(1rem, 2dvw, 2rem);
 }
 .offer-card{
   display: grid;
   grid-template-rows:
-    clamp(2rem, 2vw, 2.5rem)   
-    clamp(3rem, 3vw, 4rem)  
+    clamp(2rem, 2dvw, 2.5rem)   
+    clamp(3rem, 3dvw, 4rem)  
     1fr;
   border-radius: 20px;
   background-color: #e8ddfa;
-  padding:clamp(1rem, 1vw, 2rem);
-  gap:clamp(1rem, 1vw, 2rem);
+  padding:clamp(1rem, 1dvw, 2rem);
+  gap:clamp(1rem, 1dvw, 2rem);
 }
 .icon-star{
   color: gold;
@@ -166,8 +166,8 @@ main{
   font-weight: 700;
 }
 .storefront{
-  padding-inline: clamp(1rem, 2vw, 2rem);
-  margin-bottom: clamp(0.8rem, 1vw, 2rem);
+  padding-inline: clamp(1rem, 2dvw, 2rem);
+  margin-bottom: clamp(0.8rem, 1dvw, 2rem);
 }
 .storefront-img{
   border-radius: 20px;
@@ -177,12 +177,12 @@ main{
   text-align: start;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(1rem, 2vw, 2rem);
-  padding-inline: clamp(1rem, 2vw, 2rem);
-  margin-bottom: clamp(1rem, 4vw, 4rem)
+  gap: clamp(1rem, 2dvw, 2rem);
+  padding-inline: clamp(1rem, 2dvw, 2rem);
+  margin-bottom: clamp(1rem, 4dvw, 4rem)
 }
 .salon-img{
-  max-height: 90vh;
+  max-height: 90dvh;
   width: 100%;
   border-radius: 20px;
   height: 100%;
@@ -191,10 +191,10 @@ main{
   color: gold;
 }
 .features {
-  padding-top: clamp(1rem, 1vw 2rem);
+  padding-top: clamp(1rem, 1dvw 2rem);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: clamp(1rem, 2vw, 2rem);
+  gap: clamp(1rem, 2dvw, 2rem);
 }
 .feature {
   display: grid;
@@ -210,18 +210,18 @@ footer{
     position: relative;
     display: grid;  
     grid-template-columns: 1fr 1fr;
-    gap: clamp(1rem, 2vw , 2rem);
-    padding: clamp(1rem, 2vw, 2rem);
+    gap: clamp(1rem, 2dvw , 2rem);
+    padding: clamp(1rem, 2dvw, 2rem);
     margin-bottom: 2rem;
   }
   .store{
     border-radius: 20px;
     background-color: white;
     text-align: left;
-    padding: clamp(1rem, 1vw, 2rem);
+    padding: clamp(1rem, 1dvw, 2rem);
   }
   .contact-list{
-    padding-block: clamp(1rem, 2vw, 3rem);
+    padding-block: clamp(1rem, 2dvw, 3rem);
     line-height: 1.5em;
   }
   .address{
@@ -274,16 +274,16 @@ footer{
     border-radius: 20px;
     background-color: white;
     text-align: left;
-    padding: clamp(1rem, 1vw, 2rem);
+    padding: clamp(1rem, 1dvw, 2rem);
   }
   .help-form-grid{
      display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    padding-block: clamp(1rem, 2vw, 2rem);
+    padding-block: clamp(1rem, 2dvw, 2rem);
 }
 label{
-  font-size:clamp(1rem, 1.2vw, 2rem);
+  font-size:clamp(1rem, 1.2dvw, 2rem);
 }
 label:nth-child(3){
   grid-column: span 2;
@@ -293,38 +293,38 @@ label:nth-child(4){
 }
 .name,
 .email{
-  width:clamp(20rem, 16vw, 20rem);
-  height: clamp(1.5rem, 2vw, 2rem);
+  width:clamp(20rem, 16dvw, 20rem);
+  height: clamp(1.5rem, 2dvw, 2rem);
   padding: 0.6rem;
   border-radius: 7px;
   margin-top: 1rem;
  }
 .tel { 
-  width:clamp(20rem, 36vw, 43rem);
-  height: clamp(1.5rem, 2vw, 2rem);
+  width:clamp(20rem, 36dvw, 43rem);
+  height: clamp(1.5rem, 2dvw, 2rem);
   padding: 0.6rem;
   border-radius: 7px;
-  margin-top: clamp(0.5rem, 1vw, 1rem);
+  margin-top: clamp(0.5rem, 1dvw, 1rem);
 }
 .message {
-  font-size: clamp(0.8rem, 1.5vw, 1.5rem);
-  width:clamp(20rem, 36vw, 43rem);
-  height: clamp(8rem, 10vw, 25rem);
+  font-size: clamp(0.8rem, 1.5dvw, 1.5rem);
+  width:clamp(20rem, 36dvw, 43rem);
+  height: clamp(8rem, 10dvw, 25rem);
   padding: 0.6rem;
   border-radius: 7px;
-  margin-top: clamp(0.5rem, 1vw, 1rem);
+  margin-top: clamp(0.5rem, 1dvw, 1rem);
  }
 .form-button{
   border:#ccc;
   display: inline-flex;
-  font-size: clamp(1.1rem, 1.5vw, 1.5rem);
+  font-size: clamp(1.1rem, 1.5dvw, 1.5rem);
   border-radius: 15px;
-  width:clamp(20rem, 36vw, 43rem);
-  height: clamp(2rem, 3vw, 2.7rem);
+  width:clamp(20rem, 36dvw, 43rem);
+  height: clamp(2rem, 3dvw, 2.7rem);
   align-items: center;
   justify-content: center;
   grid-column: span 2;
-  margin-top: clamp(0.5rem, 0.5vw, 1rem);
+  margin-top: clamp(0.5rem, 0.5dvw, 1rem);
   background:#7e57c2;
   color:#ffeb3b;
   transition: background 0.3s ease, color 0.3s ease;
@@ -347,7 +347,7 @@ label:nth-child(4){
   padding: 1rem 1.5rem;
   border-radius: 15px;
   z-index: 1000;
-  font-size: clamp(1.1rem, 1.5vw, 1.5rem);
+  font-size: clamp(1.1rem, 1.5dvw, 1.5rem);
   animation: fadeInOut 10s ease forwards;
   text-align: center;
 }
@@ -467,19 +467,19 @@ label:nth-child(4){
       padding-top: 2rem;
      }
     .offer-cards{
-      padding-top: clamp(1rem, 1vw, 2rem);
+      padding-top: clamp(1rem, 1dvw, 2rem);
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      gap: clamp(1rem, 2vw, 2rem);
+      gap: clamp(1rem, 2dvw, 2rem);
     }
     .submain-container {
     grid-template-columns: 1fr;
     }
     .features {
-    padding-top: clamp(1rem, 1vw, 2rem);
+    padding-top: clamp(1rem, 1dvw, 2rem);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: clamp(1rem, 2vw, 2rem);
+    gap: clamp(1rem, 2dvw, 2rem);
 }
    .footer-content{  
     grid-template-columns: 1fr;
@@ -498,7 +498,7 @@ label:nth-child(4){
 }
 .name,
 .email{
-  width:clamp(20rem, 45.4vw, 42rem);
+  width:clamp(20rem, 45.4dvw, 42rem);
  }
   }
 @media (orientation: landscape) and (max-height: 360px){
@@ -511,19 +511,19 @@ label:nth-child(4){
       grid-template-columns: repeat(2, auto);
     } 
      .offer-cards{
-      padding-top: clamp(1rem, 1vw, 2rem);
+      padding-top: clamp(1rem, 1dvw, 2rem);
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      gap: clamp(1rem, 2vw, 2rem);
+      gap: clamp(1rem, 2dvw, 2rem);
     }
     .features {
-    padding-top: clamp(1rem, 1vw, 2rem);
+    padding-top: clamp(1rem, 1dvw, 2rem);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: clamp(1rem, 2vw, 2rem);
+    gap: clamp(1rem, 2dvw, 2rem);
   }
   .name,
 .email{
-  width:clamp(20rem, 45.4vw, 42rem);
+  width:clamp(20rem, 45.4dvw, 42rem);
  }
 }
