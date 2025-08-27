@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Перуки тут</title>
+  <link rel="icon" href="../assets/img/Logo.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="../assets/img/Logo.png">
+  <link rel="stylesheet" href="../src/favorites/favorites.css">
+  <link rel="stylesheet" href="../CSS/icons.css">
+</head>
+<body>
+    <div class="wrapper">
+  <header class="galery-header">
+        <div class="galery-header-container container">
+        <div class="logo">
+          <img src="../assets/img/Logo.png" alt="Перуки тут" class="logo-img">
+          <a href="javascript:history.back()" class="icon-arrow-left"></a>
+        </div>
+        <form action="" class="search-form">
+          <input type="text" placeholder="Я шукаю..." class="search" autofocus>
+          <button type="submit" class="search-btn icon-search"><span class="btn-text">Знайти</span></button>
+        </form>
+        <div class="nav-menu-list"> 
+        <button class="burger">
+          <span class="icon-menu-burger"></span>
+          <span class="close-burger icon-cross"></span>
+        </button>
+        <ul class="nav-menu-items">
+            <li class="nav-menu-item contact-btn icon-phone">Контакти</li>
+            <li  role="none" class="nav-menu-item account-btn icon-user">Увiйти</li>
+            <form action="" class="login-form">
+              <label for="email" class="user-id"><span class="user-id-text">Почта</span><input type="text" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" id="email"></label>
+              <label for="password" class="user-id"><span class="user-id-text">Пароль</span><input type="text" pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}" id="password" required></label>
+              <button type="submit" class="login-btn">Увiйти</button>
+              <p class="ques">Немає aкаунту ? </p>
+              <a href="#" class="registr-link">Зареєструватися</a>
+            </form>
+            <li class="nav-menu-item icon-heart"><a href="../HTML/favorites.html">Обране</a></li>
+            <li class="nav-menu-item icon-compare">Порiвняння</li>
+            <li class="nav-menu-item icon-shopping-cart">Кошик</li>
+        </ul>
+        </div>   
+    </div>
+  </header>
+  <main>
+    <div class="main-container container">
+        <div class="main-grid" id="main-container"></div>
+    </div>
+  </main>
+  </div>
+  <script src="../src/favorites/favorites.js" defer></script>
+  </body>
