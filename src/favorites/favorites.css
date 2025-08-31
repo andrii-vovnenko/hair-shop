@@ -8,7 +8,6 @@
 a{
   text-decoration: none;
   color: inherit;
-  cursor: default;
 }
 h1,h2,h3,h4,h5,h6{
 	font-size:inherit;
@@ -127,7 +126,7 @@ body{
 }
 .search-btn:hover{
   background-color: #e8ddfa;
-  color: white;
+  color: #7e57c2;
 }
 .btn-text{
   display: none;
@@ -194,7 +193,7 @@ body{
     display: flex;
     flex-direction: column;
     position: fixed;
-    width: 93dvw;
+    width: 95dvw;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -204,6 +203,7 @@ body{
     padding: clamp(1rem, 2dvw, 2rem);
     background-color: #e8ddfa;
     z-index: 4;
+    border: 2px solid #ccc;
 }
   .contact-list{
     line-height: 1.8;
@@ -269,7 +269,7 @@ body{
   display: none;
 }
 .login-form.active{
-  width: 140%;
+  width: 94dvw;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -283,20 +283,23 @@ body{
   border-radius: 8px;
   align-items: center;
   cursor: default;
+  border: 2px solid #ccc;
 }
 .user-id{
-  width: 99%;
   display: flex;
-  flex-direction: row;
-  gap: 1%;
   align-items: center;
-  }
-.user-id-text{
-  display: inline-block;
-  width: 30%;
+  width: 99%;
+  gap: 1%;
 }
-.user-id input{
-  width: 69%;
+.user-input{
+  width: 70%;
+}
+.user-id-text{
+  font-size: 1.5rem;
+  width: 29%;
+}
+.login-option{
+  display: none;
 }
 .login-btn{
   width:99%;
@@ -335,7 +338,7 @@ main{
 .product-card {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
+  border: 2px solid #ccc;
 }
 .product-card img{
   filter: brightness(80%);
@@ -372,9 +375,7 @@ main{
 .nav-menu-item:before{
     font-size: 1.5rem;
 }
-.login-form.active{
-  width: 155%;
-}
+
 }
 @media (min-width: 1024px) {
   .burger{
@@ -408,10 +409,10 @@ main{
   color: #e8ddfa;
 }
 .login-form.active{
-  width: 59%;
+  width: 55%;
   top:100%;
-  left: 50%;
-  transform: translateX(-47%);
+  left: 27.4%;
+  transform: translateX(-50%);
   }
 .ques{
   font-size: 1rem;
@@ -420,5 +421,26 @@ main{
 @media (orientation: landscape) and (max-height: 500px){
   .nav-menu-items.active{
     height: 95dvh;
+  }
+  .login-form.active{
+    width:100%;
+    top: 20%;  
+    gap: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 80%;
+  }
+  .login-btn{
+    margin: 0;
+  }
+  .registr-link{
+    font-size: 1.8rem;
+    line-height: 1;
+  }
+.contact-menu.active{
+    gap: 0.6rem;
+}
+  .contact-list{
+    line-height: 1.3;
   }
 }

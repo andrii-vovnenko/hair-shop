@@ -1,4 +1,5 @@
 window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
     const nameInput = document.getElementById('name');
     nameInput.focus({ preventScroll: true }); 
   });
@@ -27,9 +28,9 @@ const helpForm = document.querySelector(".help-form-grid");
 
 const validationMessages = {
   user_name: "Введіть своє ім’я, будь ласка",
-  user_email: "Введіть коректну електронну адресу, будь ласка",
+  user_email: "Введіть коректний email, наприклад: name@example.com, будь ласка",
   user_tel: "Введіть коректний номер телефону, будь ласка",
-  user_message: "Напишіть повідомлення, будь ласка",
+  user_message: "Напишіть Ваше повідомлення, будь ласка",
 };
 
 const fields = helpForm.querySelectorAll("input, textarea");
@@ -38,8 +39,10 @@ fields.forEach((field) => {
   field.addEventListener("invalid", () => {
     const message = validationMessages[field.name] || "Заповніть це поле, будь ласка";
     field.setCustomValidity(message); 
-    field.classList.add("show-errors"); 
-  });
+    field.classList.remove("show-errors");
+    void field.offsetWidth;
+    field.classList.add("show-errors");
+});
 
   field.addEventListener("input", () => {
     field.setCustomValidity("");
@@ -49,27 +52,12 @@ fields.forEach((field) => {
 
 helpForm.addEventListener("submit", function (e) {
   e.preventDefault();
-  console.log("ok");
-    const firstInvalid = [...helpForm.elements].find((el) => {
-    return el.tagName === 'INPUT' && !el.checkValidity();
-  });
-
-  if (firstInvalid) {
-    firstInvalid.focus();
-  }
-    if (!helpForm.checkValidity()) {
-    helpForm.reportValidity(); 
-    return;
-  }
   showOverlay();
-
-  
   //emailjs.sendForm("service_j7qrtug", "template_suxpbsw", this);
   new Promise((resolve) => {
   setTimeout(resolve, 1000); 
 })
-
-    .then(() => {
+      .then(() => {
       helpForm.reset();
       fields[0].focus();
       showToast(

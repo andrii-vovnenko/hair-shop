@@ -11,5 +11,14 @@ export const handlers = [
   rest.post('/api/like', (req, res, ctx) => {
     return res(ctx.status(201))
   }),
-]
 
+  rest.post('/api/register', async (req, res, ctx) => {
+    const { email, password } = await req.json()
+
+    if (!email || !password) {
+      return res(ctx.status(400), ctx.json({ error: 'Missing fields' }))
+    }
+
+    return res(ctx.status(201), ctx.json({ message: 'Registered successfully' }))
+  }),
+]

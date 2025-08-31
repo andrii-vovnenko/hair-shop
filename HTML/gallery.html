@@ -17,25 +17,57 @@
           <img src="../assets/img/Logo.png" alt="Перуки тут" class="logo-img">
           <a href="javascript:history.back()" class="icon-arrow-left" role="button"></a>
         </div>
-        <form action="" class="search-form">
-          <input type="text" placeholder="Я шукаю..." class="search" autofocus>
+        <form class="search-form">
+          <input  id="search-form "type="text" placeholder="Я шукаю..." class="search" autofocus>
           <button type="submit" class="search-btn icon-search"><span class="btn-text">Знайти</span></button>
         </form>
         <div class="nav-menu-list"> 
         <button class="burger">
           <span class="icon-menu-burger"></span>
-          <span class="close-burger icon-cross"></span>
+          <span class="close-burger icon-cross "></span>
         </button>
         <ul class="nav-menu-items">
-            <li class="nav-menu-item contact-btn icon-phone">Контакти</li>
-            <li  role="none" class="nav-menu-item account-btn icon-user">Увiйти</li>
-            <form action="" class="login-form">
-              <label for="email" class="user-id"><span class="user-id-text">Почта</span><input type="text" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" id="email"></label>
-              <label for="password" class="user-id"><span class="user-id-text">Пароль</span><input type="text" pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}" id="password" required></label>
+            <li class="nav-menu-item account-btn icon-user">Увiйти</li>
+            <form id="auth-form" class="login-form">
+              <div class="user-id">
+                <label for="login-email" class="user-id-text">
+                <span role="button" class="login-email" tabindex="0">Email</span><span class="icon-arrow-down" aria-hidden="true"></span>
+                <span role="button" class="login-telefon" tabindex="0">Телефон</span>
+                </label>
+                <input name="login-email" type="email" id="login-email" autocomplete="username" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder = 'Введіть email...'  class="user-input" required>
+              </div> 
+              <div class="user-id">
+                <label for="password-login" class="user-id-text">Пароль</label>
+                <div class="password-container"><input  name="login-password" type="password" autocomplete="current-password" pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8, }" id="password-login" class="user-input" placeholder="Введіть пароль..." required>
+                <button type="button" class="show-hidden"><span class="icon-eye"></span></button>
+                </div>
+              </div>
               <button type="submit" class="login-btn">Увiйти</button>
-              <p class="ques">Немає aкаунту ? </p>
-              <a href="#" class="registr-link">Зареєструватися</a>
+              <a class="recovery-link">Забули пароль?</a>
+              <a class="registr-link">Зареєструватися</a>
+              <button class="close-login icon-cross"></button>
             </form>
+            <form id="registr-form" class="registr-form">
+              <div class="user-id">
+                <label for="registr-email" class="user-id-text">
+                <span role="button" class="registr-email" tabindex="0">Email</span><span class="icon-arrow-down" aria-hidden="true"></span>
+                <span role="button" class="registr-telefon" tabindex="0">Телефон</span>
+                </label>
+                <input name="registr-email" type="email" id="registr-email" autocomplete="username" placeholder = 'Введіть email...' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="user-input" required>
+              </div> 
+              <div class="user-id">
+                <label for="password-registr" class="user-id-text">Пароль</label>
+                <div class="password-container"><input name="registr-password" type="password" autocomplete="current-password" pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8, }" id="password-registr" class="user-input" placeholder="Введіть пароль..." required>
+                <button type="button" class="show-hidden"><span class="icon-eye"></span></button>
+                </div>
+              </div>
+              <button type="submit" class="registr-btn">Зареєструватися</button>
+              <a class="recovery-link">Забули пароль?</a>
+              <a href="#" class="login-link">Увiйти</a>
+              <button class="close-registr icon-cross"></button>
+              <div class="feedback">Регистрация прошла успешно</div>
+            </form>
+            <li class="nav-menu-item contact-btn icon-phone">Контакти</li>
             <li class="nav-menu-item icon-heart"><a href="../HTML/favorites.html">Обране</a></li>
             <li class="nav-menu-item icon-compare">Порiвняння</li>
             <li class="nav-menu-item icon-shopping-cart">Кошик</li>
@@ -134,5 +166,6 @@
         </ul>
         <button class="close-contact icon-cross"></button>
     </div>
-    <script src="../src/gallery/gallery.js"></script>
+    <script type="module" src="../src/header/header.js"></script>
+    <script type="module" src="../src/gallery/gallery.js"></script>
 </body>

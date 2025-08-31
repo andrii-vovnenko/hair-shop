@@ -50,6 +50,7 @@ body{
   max-width: 1600px;
   padding-top:clamp(1rem, 2dvw, 2rem);
   text-align: center;
+  width: 100%;
 }
 .hero-header-container{
   min-height: 100dvh;
@@ -205,8 +206,10 @@ main{
 }
 footer{
   background-color: #f5f5f5;
+  
 }
   .footer-content{
+    width: 100%;
     position: relative;
     display: grid;  
     grid-template-columns: 1fr 1fr;
@@ -215,6 +218,7 @@ footer{
     margin-bottom: 2rem;
   }
   .store{
+    width: 100%;
     border-radius: 20px;
     background-color: white;
     text-align: left;
@@ -271,6 +275,7 @@ footer{
   background-image: url('../assets/icons/mail.svg');
  }
 .help-form{
+    width: 100%;
     border-radius: 20px;
     background-color: white;
     text-align: left;
@@ -279,7 +284,7 @@ footer{
   .help-form-grid{
      display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 3%;
     padding-block: clamp(1rem, 2dvw, 2rem);
 }
 label{
@@ -293,14 +298,14 @@ label:nth-child(4){
 }
 .name,
 .email{
-  width:clamp(20rem, 16dvw, 20rem);
+  width:93.4%;
   height: clamp(1.5rem, 2dvw, 2rem);
   padding: 0.6rem;
   border-radius: 7px;
   margin-top: 1rem;
  }
 .tel { 
-  width:clamp(20rem, 36dvw, 43rem);
+  width:97%;
   height: clamp(1.5rem, 2dvw, 2rem);
   padding: 0.6rem;
   border-radius: 7px;
@@ -308,7 +313,7 @@ label:nth-child(4){
 }
 .message {
   font-size: clamp(0.8rem, 1.5dvw, 1.5rem);
-  width:clamp(20rem, 36dvw, 43rem);
+  width:97%;
   height: clamp(8rem, 10dvw, 25rem);
   padding: 0.6rem;
   border-radius: 7px;
@@ -319,7 +324,7 @@ label:nth-child(4){
   display: inline-flex;
   font-size: clamp(1.1rem, 1.5dvw, 1.5rem);
   border-radius: 15px;
-  width:clamp(20rem, 36dvw, 43rem);
+  width:97%;
   height: clamp(2rem, 3dvw, 2.7rem);
   align-items: center;
   justify-content: center;
@@ -329,12 +334,30 @@ label:nth-child(4){
   color:#ffeb3b;
   transition: background 0.3s ease, color 0.3s ease;
   cursor: pointer;
+  
 }
 .form-button:hover{
- background:#ffeb3b;
+  background:#ffeb3b;
   color:#7e57c2;
 }
 .form-button:active{
+  transform: scale(0.97);
+}
+.primary-footer{
+  grid-column: span 2;
+  width: 97%;
+  font-size: clamp(1.1rem, 1.5dvw, 1.5rem);
+  border-radius: 15px;
+  height: clamp(2rem, 3dvw, 2.7rem);
+  color: #ffeb3b;
+  background:  #7e57c2;
+}
+.primary-footer:hover{
+  transform: translateY(0);
+  color: #7e57c2;
+  background: #ffeb3b;
+}
+.primary-footer:active{
   transform: scale(0.97);
 }
 .toast {
@@ -416,12 +439,19 @@ label:nth-child(4){
     transform: translate(-50%, -40%);
   }
 }
-
-input.show-errors:invalid,
-textarea.show-errors:invalid {
+.show-errors{
   border: 1px solid #e74c3c;
   background: rgba(231, 76, 60, 0.05); 
   transition: background 0.3s ease, border-color 0.3s ease;
+  animation: shake 0.3s ease;
+}
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-2px); }
+  40% { transform: translateX(2px); }
+  60% { transform: translateX(-2px); }
+  80% { transform: translateX(2px); }
+  100% { transform: translateX(0); }
 }
 
 
@@ -429,7 +459,8 @@ textarea.show-errors:invalid {
 
 
 
-@media (max-width: 768px) {
+
+@media (max-width: 1024px) {
    .submain-container {
     grid-template-columns: 1fr;
   }
@@ -446,20 +477,29 @@ textarea.show-errors:invalid {
       margin-bottom: 1rem;
     }
     .footer-content{  
+    width: 100%;
     grid-template-columns: 1fr;
+    justify-items: center;
   }
   .help-form-grid{
     grid-template-columns: 1fr;
 }
-label:nth-child(3){
+label:nth-child(3),
+label:nth-child(4),
+.form-button,
+.primary-footer{
   grid-column: span 1;
 }
-label:nth-child(4){
-  grid-column: span 1;
+
+.tel,
+.name,
+.email,
+.message,
+.form-button,
+.primary-footer{
+  width: 50%;
 }
-.form-button{
-  grid-column: span 1;
-}
+
   }
 @media (orientation: landscape) and (max-height: 500px){
     .hero-header-container {

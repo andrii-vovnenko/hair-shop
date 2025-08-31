@@ -15,7 +15,7 @@
         <div class="galery-header-container container">
         <div class="logo">
           <img src="../assets/img/Logo.png" alt="Перуки тут" class="logo-img">
-          <a href="javascript:history.back()" class="icon-arrow-left"></a>
+          <a href="javascript:history.back()" class="icon-arrow-left" role="button"></a>
         </div>
         <form action="" class="search-form">
           <input type="text" placeholder="Я шукаю..." class="search" autofocus>
@@ -27,15 +27,24 @@
           <span class="close-burger icon-cross"></span>
         </button>
         <ul class="nav-menu-items">
-            <li class="nav-menu-item contact-btn icon-phone">Контакти</li>
             <li  role="none" class="nav-menu-item account-btn icon-user">Увiйти</li>
-            <form action="" class="login-form">
-              <label for="email" class="user-id"><span class="user-id-text">Почта</span><input type="text" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" id="email"></label>
-              <label for="password" class="user-id"><span class="user-id-text">Пароль</span><input type="text" pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}" id="password" required></label>
+            <form id="auth-form" onsubmit="handleSubmit(event)" class="login-form">
+              <div class="user-id">
+                <ul class="user-id-text">Email
+                  <li class="login-option">Email</li>
+                  <li class="login-option">Телефон</li>
+                </ul>
+                <input type="text" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" id="email" class="user-input" required>
+              </div> 
+              <div class="user-id">
+                <div class="user-id-text">Пароль</div>
+                <input type="text" pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}" id="password" class="user-input" required>
+              </div>
               <button type="submit" class="login-btn">Увiйти</button>
               <p class="ques">Немає aкаунту ? </p>
               <a href="#" class="registr-link">Зареєструватися</a>
             </form>
+            <li class="nav-menu-item contact-btn icon-phone">Контакти</li>
             <li class="nav-menu-item icon-heart"><a href="../HTML/favorites.html">Обране</a></li>
             <li class="nav-menu-item icon-compare">Порiвняння</li>
             <li class="nav-menu-item icon-shopping-cart">Кошик</li>
@@ -48,6 +57,27 @@
         <div class="main-grid" id="main-container"></div>
     </div>
   </main>
+  <footer></footer>
   </div>
-  <script src="../src/favorites/favorites.js" defer></script>
+   <div class="contact-menu">
+        <ul class="contact-list icon-address"><strong>Адреса</strong>
+          <li class="address">м.Вінниця,проспект Коцюбинського,13</li>
+          <li>"Центральний ринок"</li>
+          <li>"М'ясний павільйон", другий поверх</li>
+        </ul>
+        <ul class="contact-list icon-clock"><strong>Години праці</strong>
+          <li>Вівторок - неділя:9.00 - 16.00</li>
+          <li>Понеділок - Вихідний</li>
+        </ul>
+        <ul class="contact-list icon-phone"><strong>Контакти</strong>
+          <li class="life">063 436-79-91</li>
+          <li class="kyivstar">096 987-25-45</li>
+          <li class="telegram">063 436-79-91</li>
+          <li class="viber">063 436-79-91</li>
+          <li class="mail">perukitut@gmail.com</li>
+        </ul>
+        <button class="close-contact icon-cross"></button>
+    </div>
+  <script type="module" src="../src/header/header.js"></script>
+  <script type="module" src="../src/favorites/favorites.js"></script>
   </body>

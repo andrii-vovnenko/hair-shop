@@ -1,5 +1,4 @@
-
-  fetch('../src/mocks/products.json')
+    fetch('../src/mocks/products.json')
     .then(res => res.json())
     .then(products => {
       const favorites = JSON.parse(localStorage.getItem('favorites') || '[]').map(Number);
@@ -29,4 +28,4 @@
         container.appendChild(link);
       });
     });
-
+   
