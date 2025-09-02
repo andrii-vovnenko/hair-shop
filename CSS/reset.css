@@ -1,0 +1,63 @@
+/* 0 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+h1,h2,h3,h4,h5,h6{
+	font-size:inherit;
+	font-weight: inherit;
+}
+ul,ol{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+input,
+textarea {
+  border: 2px solid #ccc;
+  box-shadow: none;
+  outline: none;
+  padding: 0.6em;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  transition: border 0.3s ease;
+}
+@font-face {
+  font-family: 'MyFont';
+  src: url(../../assets/fonts/ShareTechMonoRegular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+button{
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  background: none;
+  padding: 0;
+}
+html{
+  scroll-behavior: smooth;
+}
+body{
+  font-family: 'MyFont', sans-serif;
+  font-size: 1.1rem;
+}
+.wrapper{
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100dvh;
+}
+.container{
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1600px;
+  padding: clamp(0.8rem, 3.5dvw, 1.5rem);
+}

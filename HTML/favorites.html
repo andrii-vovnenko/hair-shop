@@ -6,43 +6,70 @@
   <title>Перуки тут</title>
   <link rel="icon" href="../assets/img/Logo.png" type="image/x-icon">
   <link rel="apple-touch-icon" href="../assets/img/Logo.png">
+  <link rel="stylesheet" href="../CSS/reset.css">
+  <link rel="stylesheet" href="../src/header/header.css">
   <link rel="stylesheet" href="../src/favorites/favorites.css">
   <link rel="stylesheet" href="../CSS/icons.css">
 </head>
 <body>
     <div class="wrapper">
-  <header class="galery-header">
+ <header class="galery-header">
         <div class="galery-header-container container">
         <div class="logo">
           <img src="../assets/img/Logo.png" alt="Перуки тут" class="logo-img">
           <a href="javascript:history.back()" class="icon-arrow-left" role="button"></a>
         </div>
-        <form action="" class="search-form">
-          <input type="text" placeholder="Я шукаю..." class="search" autofocus>
+        <form class="search-form">
+          <input  id="search-form" type="text" placeholder="Я шукаю..." class="search" autofocus>
           <button type="submit" class="search-btn icon-search"><span class="btn-text">Знайти</span></button>
         </form>
         <div class="nav-menu-list"> 
         <button class="burger">
           <span class="icon-menu-burger"></span>
-          <span class="close-burger icon-cross"></span>
+          <span class="close-burger icon-cross "></span>
         </button>
         <ul class="nav-menu-items">
-            <li  role="none" class="nav-menu-item account-btn icon-user">Увiйти</li>
-            <form id="auth-form" onsubmit="handleSubmit(event)" class="login-form">
+            <li class="nav-menu-item account-btn icon-user">Увiйти</li>
+            <form id="login-form" class="login-form">
               <div class="user-id">
-                <ul class="user-id-text">Email
-                  <li class="login-option">Email</li>
-                  <li class="login-option">Телефон</li>
-                </ul>
-                <input type="text" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" id="email" class="user-input" required>
+                <label for="login-email" class="user-id-text">
+                <span role="button" class="login-email" tabindex="0">Email</span><span class="icon-arrow-down" aria-hidden="true"></span>
+                <span role="button" class="login-telefon" tabindex="0">Телефон</span>
+                </label>
+                <input name="login-email" type="email" pattern="^\S+@\S+.\S+$" id="login-email" autocomplete="username"  placeholder = 'Введіть email...'  class="user-input" required>
               </div> 
               <div class="user-id">
-                <div class="user-id-text">Пароль</div>
-                <input type="text" pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}" id="password" class="user-input" required>
+                <label for="password-login" class="user-id-text">Пароль</label>
+                <div class="password-container"><input  name="login-password" type="password" autocomplete="current-password" 
+ id="password-login" class="user-input" placeholder="Введіть пароль..." required>
+                <button type="button" class="show-hidden"><span class="icon-eye"></span></button>
+                </div>
               </div>
               <button type="submit" class="login-btn">Увiйти</button>
-              <p class="ques">Немає aкаунту ? </p>
-              <a href="#" class="registr-link">Зареєструватися</a>
+              <a class="recovery-link">Забули пароль?</a>
+              <a class="registr-link">Зареєструватися</a>
+              <button class="close-login icon-cross"></button>
+            </form>
+            <form id="registr-form" class="registr-form">
+              <div class="user-id">
+                <label for="registr-email" class="user-id-text">
+                <span role="button" class="registr-email" tabindex="0">Email</span><span class="icon-arrow-down" aria-hidden="true"></span>
+                <span role="button" class="registr-telefon" tabindex="0">Телефон</span>
+                </label>
+                <input name="registr-email" type="email" id="registr-email" autocomplete="username" placeholder = 'Введіть email...' pattern="^\S+@\S+.\S+$" class="user-input" required>
+              </div> 
+              <div class="user-id">
+                <label for="password-registr" class="user-id-text">Пароль</label>
+                <div class="password-container"><input name="registr-password" type="password" autocomplete="current-password" 
+ id="password-registr" class="user-input" placeholder="Введіть пароль..." required>
+                <button type="button" class="show-hidden"><span class="icon-eye"></span></button>
+                </div>
+              </div>
+              <button type="submit" class="registr-btn">Зареєструватися</button>
+              <a class="recovery-link">Забули пароль?</a>
+              <a href="#" class="login-link">Увiйти</a>
+              <button class="close-registr icon-cross"></button>
+              <div class="feedback">Регистрация прошла успешно</div>
             </form>
             <li class="nav-menu-item contact-btn icon-phone">Контакти</li>
             <li class="nav-menu-item icon-heart"><a href="../HTML/favorites.html">Обране</a></li>
@@ -59,7 +86,7 @@
   </main>
   <footer></footer>
   </div>
-   <div class="contact-menu">
+      <div class="contact-menu">
         <ul class="contact-list icon-address"><strong>Адреса</strong>
           <li class="address">м.Вінниця,проспект Коцюбинського,13</li>
           <li>"Центральний ринок"</li>

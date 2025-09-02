@@ -5,8 +5,10 @@
       const container = document.getElementById('main-container');
 
       const favoriteProducts = products.filter(p => favorites.includes(p.id));
-
-      if (favoriteProducts.length === 0) {
+      if (!container) {
+      console.warn('[Favorites] container не найден в DOM');
+      return;
+}     if (favoriteProducts.length === 0) {
         container.innerHTML = '<p>Немає обраних товарів 😢</p>';
         return;
       }

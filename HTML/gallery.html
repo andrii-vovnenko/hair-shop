@@ -6,6 +6,8 @@
   <title>Перуки тут</title>
   <link rel="icon" href="../assets/img/Logo.png" type="image/x-icon">
   <link rel="apple-touch-icon" href="../assets/img/Logo.png">
+  <link rel="stylesheet" href="../CSS/reset.css">
+  <link rel="stylesheet" href="../src/header/header.css">
   <link rel="stylesheet" href="../src/gallery/gallery.css">
   <link rel="stylesheet" href="../CSS/icons.css">
 </head>
@@ -18,7 +20,7 @@
           <a href="javascript:history.back()" class="icon-arrow-left" role="button"></a>
         </div>
         <form class="search-form">
-          <input  id="search-form "type="text" placeholder="Я шукаю..." class="search" autofocus>
+          <input  id="search-form" type="text" placeholder="Я шукаю..." class="search" autofocus>
           <button type="submit" class="search-btn icon-search"><span class="btn-text">Знайти</span></button>
         </form>
         <div class="nav-menu-list"> 
@@ -28,17 +30,18 @@
         </button>
         <ul class="nav-menu-items">
             <li class="nav-menu-item account-btn icon-user">Увiйти</li>
-            <form id="auth-form" class="login-form">
+            <form id="login-form" class="login-form">
               <div class="user-id">
                 <label for="login-email" class="user-id-text">
                 <span role="button" class="login-email" tabindex="0">Email</span><span class="icon-arrow-down" aria-hidden="true"></span>
                 <span role="button" class="login-telefon" tabindex="0">Телефон</span>
                 </label>
-                <input name="login-email" type="email" id="login-email" autocomplete="username" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder = 'Введіть email...'  class="user-input" required>
+                <input name="login-email" type="email" pattern="^\S+@\S+.\S+$" id="login-email" autocomplete="username"  placeholder = 'Введіть email...'  class="user-input" required>
               </div> 
               <div class="user-id">
                 <label for="password-login" class="user-id-text">Пароль</label>
-                <div class="password-container"><input  name="login-password" type="password" autocomplete="current-password" pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8, }" id="password-login" class="user-input" placeholder="Введіть пароль..." required>
+                <div class="password-container"><input  name="login-password" type="password" autocomplete="current-password" 
+ id="password-login" class="user-input" placeholder="Введіть пароль..." required>
                 <button type="button" class="show-hidden"><span class="icon-eye"></span></button>
                 </div>
               </div>
@@ -53,11 +56,12 @@
                 <span role="button" class="registr-email" tabindex="0">Email</span><span class="icon-arrow-down" aria-hidden="true"></span>
                 <span role="button" class="registr-telefon" tabindex="0">Телефон</span>
                 </label>
-                <input name="registr-email" type="email" id="registr-email" autocomplete="username" placeholder = 'Введіть email...' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="user-input" required>
+                <input name="registr-email" type="email" id="registr-email" autocomplete="username" placeholder = 'Введіть email...' pattern="^\S+@\S+.\S+$" class="user-input" required>
               </div> 
               <div class="user-id">
                 <label for="password-registr" class="user-id-text">Пароль</label>
-                <div class="password-container"><input name="registr-password" type="password" autocomplete="current-password" pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8, }" id="password-registr" class="user-input" placeholder="Введіть пароль..." required>
+                <div class="password-container"><input name="registr-password" type="password" autocomplete="current-password" 
+ id="password-registr" class="user-input" placeholder="Введіть пароль..." required>
                 <button type="button" class="show-hidden"><span class="icon-eye"></span></button>
                 </div>
               </div>
@@ -65,7 +69,7 @@
               <a class="recovery-link">Забули пароль?</a>
               <a href="#" class="login-link">Увiйти</a>
               <button class="close-registr icon-cross"></button>
-              <div class="feedback">Регистрация прошла успешно</div>
+              <div class="feedback"></div>
             </form>
             <li class="nav-menu-item contact-btn icon-phone">Контакти</li>
             <li class="nav-menu-item icon-heart"><a href="../HTML/favorites.html">Обране</a></li>

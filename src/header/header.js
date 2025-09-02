@@ -1,4 +1,63 @@
 
+
+import { worker } from '../mocks/browser.js';
+worker.start();
+
+function registrUser(){
+
+const registrForm = document.querySelector('#registr-form');
+const feedback = document.querySelector('.feedback');
+
+registrForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const formData = new FormData(registrForm);
+  const email = formData.get('registr-email');
+  const password = formData.get('registr-password');
+
+  try {
+    const res = await fetch('/api/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password }),
+    });
+
+    const data = await res.json();
+   /* if (res.ok) {
+    localStorage.setItem('currentUser', email);
+    registrForm.reset();}*/
+    feedback.textContent = res.ok ? data.message : data.error || 'Unknown error';
+    feedback.classList.add('visible');
+    
+
+
+    setTimeout(() => {
+      feedback.classList.remove('visible');
+    }, 3000);
+  } catch (err) {
+    feedback.textContent = 'Network error';
+    feedback.classList.add('visible');
+
+    setTimeout(() => {
+      feedback.classList.remove('visible');
+    }, 3000);
+  }
+  
+});
+};
+
+/*function loginUser(){
+
+const loginForm = document.querySelector('#login-form');
+const feedback = document.querySelector('.feedback');
+
+loginForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+})
+};*/
+
+function initUI () {
 const contact = document.querySelector('.contact-menu');
     const contactBtn = document.querySelector('.contact-btn');
     const closeContact = document.querySelector('.close-contact');
@@ -71,7 +130,7 @@ function toggleMethodLogin() {
     inputLogin.type = 'email';
     inputLogin.autocomplete = 'username';
     inputLogin.placeholder = 'Введіть email...';
-    inputLogin.pattern = '^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$';
+    inputLogin.pattern = "^\\S+@\\S+\\.\\S+$";
   }
     inputLogin.value = '';
     inputLogin.classList.remove("show-errors");
@@ -167,47 +226,13 @@ showHiddens.forEach((btn) => {
     });
   });
 });
+};
 
-const registrForm = document.querySelector('#registr-form');
-const feedback = document.querySelector('.feedback');
 
-registrForm.addEventListener('submit', async (e) => {
-  e.preventDefault();
-
-  const formData = new FormData(registrForm);
-  const email = formData.get('email');
-  const password = formData.get('password');
-
-  try {
-    const res = await fetch('/api/register', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password }),
-    });
-
-    const data = await res.json();
-
-    feedback.textContent = res.ok ? data.message : data.error || 'Unknown error';
-    feedback.classList.add('visible');
-
-    setTimeout(() => {
-      feedback.classList.remove('visible');
-    }, 3000);
-  } catch (err) {
-    feedback.textContent = 'Network error';
-    feedback.classList.add('visible');
-
-    setTimeout(() => {
-      feedback.classList.remove('visible');
-    }, 3000);
-  }
+document.addEventListener('DOMContentLoaded', () => {
+  initUI();
+  registrUser();
+  /*loginUser();*/
 });
 
 
-
-/*import { worker } from '../mocks/browser';
-
-worker.start().then(() => {
-
-
-});*/
