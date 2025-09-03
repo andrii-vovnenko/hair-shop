@@ -4,9 +4,9 @@ import { worker } from '../mocks/browser.js';
 worker.start();
 
 function registrUser(){
-
+const loginForm = document.querySelector('#login-form');
 const registrForm = document.querySelector('#registr-form');
-const feedback = document.querySelector('.feedback');
+const feedback = document.querySelector('.feedback-registr');
 
 registrForm.addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -23,9 +23,16 @@ registrForm.addEventListener('submit', async (e) => {
     });
 
     const data = await res.json();
-   /* if (res.ok) {
+    if (res.ok) {
     localStorage.setItem('currentUser', email);
-    registrForm.reset();}*/
+    registrForm.reset();
+    setTimeout(() => {
+      registrForm.classList.remove('active');
+      loginForm.classList.remove('active');
+    }, 3000);
+    }else{
+      feedback.classList.add('error');
+    }
     feedback.textContent = res.ok ? data.message : data.error || 'Unknown error';
     feedback.classList.add('visible');
     
@@ -46,16 +53,55 @@ registrForm.addEventListener('submit', async (e) => {
 });
 };
 
-/*function loginUser(){
+function loginUser() {
+  const contact = document.querySelector('.contact-menu');
+  const accountBtn = document.querySelector('.account-btn');
+  const registrForm = document.querySelector('#registr-form');
+  const loginForm = document.querySelector('#login-form');
+  const feedback = document.querySelector('.feedback-login');
 
-const loginForm = document.querySelector('#login-form');
-const feedback = document.querySelector('.feedback');
+  loginForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(loginForm);
+    const email = formData.get('login-email');
+    const password = formData.get('login-password');
 
-loginForm.addEventListener('submit', async (e) => {
-  e.preventDefault();
+    try {
+      const res = await fetch('/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      });
 
-})
-};*/
+      const data = await res.json();
+
+      if (res.ok) {
+        localStorage.setItem('currentUser', email);
+        loginForm.reset();
+        setTimeout(() => {
+        registrForm.classList.remove('active');
+        loginForm.classList.remove('active');
+      }, 3000);
+        accountBtn.textContent = 'Вийти';
+      
+      }else{
+      feedback.classList.add('error');
+    }
+
+      feedback.textContent = data.message || data.error || 'Unknown error';
+      feedback.classList.add('visible');
+    } catch (err) {
+      feedback.textContent = 'Network error';
+      feedback.classList.add('visible');
+    }
+
+    setTimeout(() => {
+      feedback.classList.remove('visible');
+    }, 3000);
+  });
+}
+
+
 
 function initUI () {
 const contact = document.querySelector('.contact-menu');
@@ -73,9 +119,25 @@ const contact = document.querySelector('.contact-menu');
     const userLogin = document.querySelector('.login-form');
     const accountBtn = document.querySelector('.account-btn');
     accountBtn.addEventListener('click', () => {
-    userLogin.classList.toggle('active');
+  const currentUser = localStorage.getItem('currentUser');
+
+  if (currentUser) {
+    // 👉 Пользователь вошёл — выходим
+    localStorage.removeItem('currentUser');
+    accountBtn.textContent = 'Увійти';
+    document.querySelector('.welcome').textContent = '';
+    // Можно показать формы снова, если нужно
+    userLogin.classList.add('active');
+  } else {
+    // 👉 Пользователь не вошёл — показываем формы
+    userLogin.classList.add('active');
     userRegistr.classList.remove('active');
-    });
+  }
+});
+
+   
+    
+  
     closeLogin.addEventListener('click', () => {
     userLogin.classList.remove('active');
     });
@@ -232,7 +294,7 @@ showHiddens.forEach((btn) => {
 document.addEventListener('DOMContentLoaded', () => {
   initUI();
   registrUser();
-  /*loginUser();*/
+  loginUser();
 });
 
 

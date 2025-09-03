@@ -392,9 +392,9 @@ justify-content: center;
 .feedback{
   display:none;
   width: 96%;
-  height: 21%;
+  height: 62%;
   position: absolute;
-  top: 21%;
+  top: 3%;
   z-index: 3;
   background: #ffeb3b;
   align-items: center;
@@ -402,9 +402,14 @@ justify-content: center;
   color: #7e57c2;
   border-radius: 8px;
   padding-bottom: 5px;
+  text-align: center;
 }
 .feedback.visible{
   display: flex;
+}
+.feedback.error{
+  background: red;
+  color: #ffeb3b;
 }
 
 /* Media */
