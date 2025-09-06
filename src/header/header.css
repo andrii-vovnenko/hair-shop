@@ -21,24 +21,35 @@
 .logo-img{
     width: 60px;
     height: 48px;
-    transition: opacity 0.3s ease;
+    animation: fadeOutIn 5s infinite alternate;
+
+
 } 
 .icon-arrow-left{
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  opacity: 0;
+  animation: fadeInOut 5s infinite alternate;
 }
+@keyframes fadeOutIn {
+  0%   { opacity: 1; }
+  50%  { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+@keyframes fadeInOut {
+  0%   { opacity: 0; }
+  50%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+
+
 .icon-arrow-left::before{
   color: #ffeb3b;
   font-size: 3rem;
-}
-.logo:hover .icon-arrow-left{
-  opacity: 1;
-}
-.logo:hover .logo-img{
-  opacity: 0;
 }
 .search-form{
   width: clamp(12rem, 54.5dvw, 14rem);
@@ -121,10 +132,34 @@
 .nav-menu-item:hover{
   color: #ffeb3b;
   }
-.nav-menu-item:before{
+  .icon{
     padding-right: 5px;
-    font-size: 2rem;
-}
+    }
+    .favorites{
+      position: relative;
+    }
+    .badge{
+      color: white;
+      font-size: 1.2rem;
+      position: absolute;
+      top: 15%;
+      left: 30%;
+    }
+    .icon-heart{
+      opacity:0;
+    }
+    .icon-heart.active{
+      opacity:1;
+    }
+    .icon-heart_full{
+      position: absolute;
+      top: -35%;
+      left: 0;
+      opacity: 0;
+    }
+    .icon-heart_full.active{
+      opacity: 1;
+    }
 .contact-menu{
     display: none;
     }
@@ -411,7 +446,15 @@ justify-content: center;
   background: red;
   color: #ffeb3b;
 }
-
+.account-btn.active{
+  display: none;
+}
+.cabinet{
+  display: none;
+}
+.cabinet.active{
+  display: inline-flex;
+}
 /* Media */
 
 @media (max-width: 360px) {
@@ -429,6 +472,9 @@ justify-content: center;
   .burger{
     display: none;
   }
+  .badge{
+      color: #e8ddfa;
+    }
   .nav-menu-items{
     width: 100%;
     position: relative;
@@ -437,15 +483,15 @@ justify-content: center;
     font-size: inherit;
     gap: 2rem;
     padding: 0;
+    font-size: 1.5rem;
   }
-  .nav-menu-item::before{
-    font-size: inherit;
-  }
+
   .search-form{
-  width: 500px;
+    width: 100%;
+  width:clamp(16rem, 26dvw, 31rem)
 }   
 .search-btn{
-  width: 7rem;
+  width: 7rem;;
 }
   .btn-text {
     display: inline-block;

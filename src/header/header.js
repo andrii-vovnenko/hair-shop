@@ -21,44 +21,38 @@ registrForm.addEventListener('submit', async (e) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password }),
     });
-
     const data = await res.json();
     if (res.ok) {
-    localStorage.setItem('currentUser', email);
     registrForm.reset();
-    setTimeout(() => {
+     setTimeout(() => {
+      feedback.classList.remove('visible');
       registrForm.classList.remove('active');
       loginForm.classList.remove('active');
     }, 3000);
     }else{
       feedback.classList.add('error');
+      setTimeout(() => {
+      feedback.classList.remove('error','visible');
+    }, 3000);
     }
-    feedback.textContent = res.ok ? data.message : data.error || 'Unknown error';
+    feedback.textContent = data.message || data.error;
     feedback.classList.add('visible');
-    
-
-
+    } catch (err) {
+    feedback.textContent = 'Щось пiшло не так...🤔';
+    feedback.classList.add('error');
     setTimeout(() => {
-      feedback.classList.remove('visible');
-    }, 3000);
-  } catch (err) {
-    feedback.textContent = 'Network error';
-    feedback.classList.add('visible');
-
-    setTimeout(() => {
-      feedback.classList.remove('visible');
-    }, 3000);
-  }
-  
-});
+    feedback.classList.remove('error');
+     }, 3000);
+    }
+  });
 };
 
 function loginUser() {
-  const contact = document.querySelector('.contact-menu');
   const accountBtn = document.querySelector('.account-btn');
   const registrForm = document.querySelector('#registr-form');
   const loginForm = document.querySelector('#login-form');
   const feedback = document.querySelector('.feedback-login');
+  const cabinet = document.querySelector('.cabinet');
 
   loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -78,25 +72,27 @@ function loginUser() {
       if (res.ok) {
         localStorage.setItem('currentUser', email);
         loginForm.reset();
+        accountBtn.classList.add('active');
+        cabinet.classList.add('active');
         setTimeout(() => {
-        registrForm.classList.remove('active');
-        loginForm.classList.remove('active');
-      }, 3000);
-        accountBtn.textContent = 'Вийти';
-      
+      feedback.classList.remove('visible');
+      registrForm.classList.remove('active');
+      loginForm.classList.remove('active');
+    }, 3000);
       }else{
       feedback.classList.add('error');
+      setTimeout(() => {
+      feedback.classList.remove('error','visible');
+    }, 3000);
     }
-
-      feedback.textContent = data.message || data.error || 'Unknown error';
+      feedback.textContent = data.message || data.error;
       feedback.classList.add('visible');
     } catch (err) {
-      feedback.textContent = 'Network error';
-      feedback.classList.add('visible');
+      feedback.textContent = 'Щось пiшло не так...🤔';
+      feedback.classList.add('error');
     }
-
-    setTimeout(() => {
-      feedback.classList.remove('visible');
+      setTimeout(() => {
+      feedback.classList.remove('error');
     }, 3000);
   });
 }
@@ -115,45 +111,32 @@ const contact = document.querySelector('.contact-menu');
     });
     
     /*Меню:Увiйти*/
+    const cabinet = document.querySelector('.cabinet');
     const closeLogin = document.querySelector('.close-login');
     const userLogin = document.querySelector('.login-form');
     const accountBtn = document.querySelector('.account-btn');
-    accountBtn.addEventListener('click', () => {
-  const currentUser = localStorage.getItem('currentUser');
-
-  if (currentUser) {
-    // 👉 Пользователь вошёл — выходим
-    localStorage.removeItem('currentUser');
-    accountBtn.textContent = 'Увійти';
-    document.querySelector('.welcome').textContent = '';
-    // Можно показать формы снова, если нужно
-    userLogin.classList.add('active');
-  } else {
-    // 👉 Пользователь не вошёл — показываем формы
-    userLogin.classList.add('active');
-    userRegistr.classList.remove('active');
-  }
-});
-
-   
-    
-  
-    closeLogin.addEventListener('click', () => {
-    userLogin.classList.remove('active');
-    });
-
-    /*Меню:Зареэструватися*/
-    const closeRegistr = document.querySelector('.close-registr');
-    const userRegistr = document.querySelector('.registr-form');
-    const registrLink = document.querySelector('.registr-link');
     const loginLink = document.querySelector('.login-link');
-    registrLink.addEventListener('click', () => {
-    userRegistr.classList.add('active');
-    userLogin.classList.remove('active');
+    accountBtn.addEventListener('click', () => {
+    userLogin.classList.toggle('active');
+    userRegistr.classList.remove('active');
     });
     loginLink.addEventListener('click', () => {
     userRegistr.classList.remove('active');
     userLogin.classList.add('active');
+    });
+    closeLogin.addEventListener('click', () => {
+    userLogin.classList.remove('active');
+    });
+    cabinet.addEventListener('click', () => {
+      window.location.href = "./cabinet.html";
+    });
+    /*Меню:Зареэструватися*/
+    const closeRegistr = document.querySelector('.close-registr');
+    const userRegistr = document.querySelector('.registr-form');
+    const registrLink = document.querySelector('.registr-link');
+    registrLink.addEventListener('click', () => {
+    userRegistr.classList.add('active');
+    userLogin.classList.remove('active');
     });
     closeRegistr.addEventListener('click', () => {
     userRegistr.classList.remove('active');
@@ -290,11 +273,28 @@ showHiddens.forEach((btn) => {
 });
 };
 
+function saveUser() {
+  const currentUser = localStorage.getItem('currentUser');
+  const cabinet = document.querySelector('.cabinet');
+  const accountBtn = document.querySelector('.account-btn')
+  if (currentUser) {
+    accountBtn.classList.add('active');
+    cabinet.classList.add('active');
+  } else {
+    accountBtn.classList.remove('active');
+    cabinet.classList.remove('active');
+  }
+}
 
-document.addEventListener('DOMContentLoaded', () => {
+
+
+
+export function initHeader() {
   initUI();
   registrUser();
   loginUser();
-});
+  saveUser();
+  getFavoritesCount();
+};
 
 

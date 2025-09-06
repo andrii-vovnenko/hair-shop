@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Перуки тут</title>
+  <link rel="icon" href="../assets/img/Logo.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="../assets/img/Logo.png">
+  <link rel="stylesheet" href="../CSS/reset.css">
+  <link rel="stylesheet" href="../src/header/header.css">
+  <link rel="stylesheet" href="../src/cabinet/cabinet.css">
+  <link rel="stylesheet" href="../CSS/icons.css">
+</head>
+<body>
+    <div class="wrapper">
+ <div id="header"></div>
+    <script type="module">
+      import { initHeader } from '../src/header/header.js';
+      fetch('../src/header/header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('header').innerHTML = html;
+        initHeader();
+        window.dispatchEvent(new Event('header-ready'));
+      });
+  </script>
+  <main>
+    <div class="main-container container">
+      <div class="user-option">
+        <ul class="option-items">
+          <li class="option-item">Особистi данi</li>
+          <li class="option-item">Вашi замовлення</li>
+          <li class="option-item">Вашi знижки</li>
+          <li class="option-item exit">Вийти</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  <footer></footer>
+  </div>
+  <script type="module" src="../src/header/header.js"></script>
+  <script type="module" src="../src/cabinet/cabinet.js"></script>
+  </body>

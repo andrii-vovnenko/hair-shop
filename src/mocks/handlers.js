@@ -14,7 +14,7 @@ mockDB.users.set(email, {email,password});
 mockDB.save();
   
 return HttpResponse.json(
-    { message: 'Реєстрація успішна🥳' },
+    { message: 'Ваш акаунт зареєстровано🥳' },
     { status: 200, }
   );
 }),
@@ -31,7 +31,7 @@ http.post('/api/login', async ({ request }) => {
     }
 
     return HttpResponse.json(
-      { message: 'Вхід успішний 🎉', user },
+      { message: 'Ласкаво просимо 😉'},
       { status: 200 }
     );
   })

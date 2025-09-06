@@ -40,6 +40,12 @@ main{
   opacity: 0;
   transition: opacity 0.3s ease;
 }
+.action-btn.icon-compare.active{
+color:palevioletred;
+text-decoration: line-through;
+text-decoration-style: solid;
+}
+
 .action-btn.icon-heart.active .icon-heart_full {
   opacity: 1;
 }
@@ -55,11 +61,6 @@ main{
 .product-title {
   font-weight: 500;
   display: block;
-  transition: transform 0.2s ease;
-
- }
- .product-title:hover{
-  transform: scale(1.01);
  }
 .product-price {
   text-align: right;
@@ -72,11 +73,9 @@ main{
 }
 .action-btn {
   color: #7e57c2;
-  transition: transform 0.1s ease;
   cursor: pointer;
-  transition: transform 0.2s ease;
 }
  .action-btn:hover{
-  transform: scale(0.9);
+  transform: translateY(1px);
  }
 

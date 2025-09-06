@@ -37,6 +37,9 @@
   50%  { transform: translateY(8px); }
   100% { transform: translateY(0); }
 }
+h1,h2,h3{
+  text-align: center;
+}
 h1{
   font-size: clamp(1.4rem, 2dvw, 2rem);
 }
@@ -46,12 +49,15 @@ h2{
 h3{
   font-size: clamp(1.8rem, 2dvw, 3rem);
   font-weight: bolder;
-  text-align: center;
-  line-height: clamp(2.2rem, 3dvw, 4rem);
+  line-height: 1.3;
 }
 h4{
   font-weight:bold;
-  font-size: clamp(1.3rem, 1.5dvw, 1.7rem);
+  font-size: clamp(1.2rem, 1.4dvw, 1.6rem);
+}
+.submain-title h3{
+  line-height: 1.1;
+  margin-bottom: 0.8rem;
 }
 .hero-buttons-container{
   display: grid;
@@ -90,7 +96,8 @@ main{
 }
 .offer-cards{
   text-align: start;
-  padding: clamp(1rem, 2dvw, 2rem);
+  padding-bottom: clamp(1rem, 2dvw, 2rem);
+  padding-top: clamp(1rem, 2dvw, 2rem);;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
   gap: clamp(1rem, 2dvw, 2rem);
@@ -114,7 +121,8 @@ main{
   font-weight: 700;
 }
 .storefront{
-  padding-inline: clamp(1rem, 2dvw, 2rem);
+  padding-bottom: clamp(1rem, 2dvw, 2rem);
+  padding-top: clamp(1rem, 2dvw, 2rem);;
   margin-bottom: clamp(0.8rem, 1dvw, 2rem);
 }
 .storefront-img{
@@ -126,26 +134,29 @@ main{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(1rem, 2dvw, 2rem);
-  padding-inline: clamp(1rem, 2dvw, 2rem);
-  margin-bottom: clamp(1rem, 4dvw, 4rem)
+  margin-bottom: clamp(0.5rem, 1dvw, 1.2rem)
+}
+.submain-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .salon-img{
   max-height: 90dvh;
   width: 100%;
   border-radius: 20px;
-  height: 100%;
 }
 .store-name{
   color: gold;
 }
 .features {
-  padding-top: clamp(1rem, 1dvw 2rem);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: clamp(1rem, 2dvw, 2rem);
 }
 .feature {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   background-color: #e8ddfa;
   padding: 1rem;
   border-radius: 20px;
@@ -153,26 +164,32 @@ main{
 }
 footer{
   background-color: #f5f5f5;
-  
-}
+  }
+  .footer-content h1{
+    text-align: start;
+    margin-bottom: clamp(1rem, 2dvw, 2rem);
+  }
   .footer-content{
     width: 100%;
     position: relative;
     display: grid;  
     grid-template-columns: 1fr 1fr;
     gap: clamp(1rem, 2dvw , 2rem);
-    padding: clamp(1rem, 2dvw, 2rem);
-    margin-bottom: 2rem;
+    padding-top: clamp(1rem, 2dvw, 2rem);
+    
   }
   .store{
     width: 100%;
     border-radius: 20px;
     background-color: white;
-    text-align: left;
     padding: clamp(1rem, 1dvw, 2rem);
   }
+  .contacts{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2rem, 4.5dvw, 5rem);
+  }
   .contact-list{
-    padding-block: clamp(1rem, 2dvw, 3rem);
     line-height: 1.5em;
   }
   .address{
@@ -225,15 +242,14 @@ footer{
     width: 100%;
     border-radius: 20px;
     background-color: white;
-    text-align: left;
     padding: clamp(1rem, 1dvw, 2rem);
   }
   .help-form-grid{
-     display: grid;
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 3%;
-    padding-block: clamp(1rem, 2dvw, 2rem);
-}
+    gap: 4.3%;
+    padding-block:0 4rem;
+    }
 label{
   font-size:clamp(1rem, 1.2dvw, 2rem);
 }
@@ -245,14 +261,14 @@ label:nth-child(4){
 }
 .name,
 .email{
-  width:93.4%;
+  width:100%;
   height: clamp(1.5rem, 2dvw, 2rem);
   padding: 0.6rem;
   border-radius: 7px;
-  margin-top: 1rem;
+  margin-top: clamp(0.5rem, 1dvw, 1rem);
  }
 .tel { 
-  width:97%;
+  width:100%;
   height: clamp(1.5rem, 2dvw, 2rem);
   padding: 0.6rem;
   border-radius: 7px;
@@ -260,7 +276,7 @@ label:nth-child(4){
 }
 .message {
   font-size: clamp(0.8rem, 1.5dvw, 1.5rem);
-  width:97%;
+  width:100%;
   height: clamp(8rem, 10dvw, 25rem);
   padding: 0.6rem;
   border-radius: 7px;
@@ -271,7 +287,7 @@ label:nth-child(4){
   display: inline-flex;
   font-size: clamp(1.1rem, 1.5dvw, 1.5rem);
   border-radius: 15px;
-  width:97%;
+  width:100%;
   height: clamp(2rem, 3dvw, 2.7rem);
   align-items: center;
   justify-content: center;
@@ -288,23 +304,6 @@ label:nth-child(4){
   color:#7e57c2;
 }
 .form-button:active{
-  transform: scale(0.97);
-}
-.primary-footer{
-  grid-column: span 2;
-  width: 97%;
-  font-size: clamp(1.1rem, 1.5dvw, 1.5rem);
-  border-radius: 15px;
-  height: clamp(2rem, 3dvw, 2.7rem);
-  color: #ffeb3b;
-  background:  #7e57c2;
-}
-.primary-footer:hover{
-  transform: translateY(0);
-  color: #7e57c2;
-  background: #ffeb3b;
-}
-.primary-footer:active{
   transform: scale(0.97);
 }
 .toast {
@@ -348,7 +347,7 @@ label:nth-child(4){
   gap: 0.8rem;
   font-size: 1.2rem;
   color: #7e57c2;
-  animation: fadeInUp 0.5s ease forwards;
+  animation: fadeInOut 0.5s ease forwards;
 }
 
 /* Спиннер */
@@ -430,22 +429,14 @@ label:nth-child(4){
   }
   .help-form-grid{
     grid-template-columns: 1fr;
+    
 }
 label:nth-child(3),
 label:nth-child(4),
-.form-button,
-.primary-footer{
+.form-button{
   grid-column: span 1;
 }
 
-.tel,
-.name,
-.email,
-.message,
-.form-button,
-.primary-footer{
-  width: 50%;
-}
 
   }
 @media (orientation: landscape) and (max-height: 500px){
@@ -474,19 +465,7 @@ label:nth-child(4),
 .help-form-grid{
     grid-template-columns: 1fr;
 }
-label:nth-child(3){
-  grid-column: span 1;
-}
-label:nth-child(4){
-  grid-column: span 1;
-}
-.form-button{
-  grid-column: span 1;
-}
-.name,
-.email{
-  width:clamp(20rem, 45.4dvw, 42rem);
- }
+
   }
 @media (orientation: landscape) and (max-height: 360px){
     .hero-header-container {
@@ -509,8 +488,4 @@ label:nth-child(4){
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: clamp(1rem, 2dvw, 2rem);
   }
-  .name,
-.email{
-  width:clamp(20rem, 45.4dvw, 42rem);
- }
 }

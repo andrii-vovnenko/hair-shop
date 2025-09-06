@@ -1,17 +1,17 @@
     fetch('../src/mocks/products.json')
     .then(res => res.json())
     .then(products => {
-      const favorites = JSON.parse(localStorage.getItem('favorites') || '[]').map(Number);
+      const currentUser = localStorage.getItem('currentUser') || 'guest';
+      const mockDB = JSON.parse(localStorage.getItem('mockDB') || '{}');
+      const favorites = mockDB.users[currentUser].favorites.map(Number);
+
       const container = document.getElementById('main-container');
 
       const favoriteProducts = products.filter(p => favorites.includes(p.id));
-      if (!container) {
-      console.warn('[Favorites] container не найден в DOM');
-      return;
-}     if (favoriteProducts.length === 0) {
+      if (favoriteProducts.length === 0) {
         container.innerHTML = '<p>Немає обраних товарів 😢</p>';
         return;
-      }
+        }
 
       favoriteProducts.forEach(product => {
         const link = document.createElement('a');

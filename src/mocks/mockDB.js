@@ -3,10 +3,10 @@ export const mockDB = {
 
   save() {
     const json = JSON.stringify(Object.fromEntries(this.users));
-    localStorage.setItem('mockUsers', json);
+    localStorage.setItem('mockDB', json);
   },
  load() {
-    const raw = localStorage.getItem('mockUsers');
+    const raw = localStorage.getItem('mockDB');
     if (raw) {
       const parsed = JSON.parse(raw);
       this.users = new Map(Object.entries(parsed));

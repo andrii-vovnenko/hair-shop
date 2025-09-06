@@ -13,72 +13,16 @@
 </head>
 <body>
     <div class="wrapper">
- <header class="galery-header">
-        <div class="galery-header-container container">
-        <div class="logo">
-          <img src="../assets/img/Logo.png" alt="Перуки тут" class="logo-img">
-          <a href="javascript:history.back()" class="icon-arrow-left" role="button"></a>
-        </div>
-        <form class="search-form">
-          <input  id="search-form" type="text" placeholder="Я шукаю..." class="search" autofocus>
-          <button type="submit" class="search-btn icon-search"><span class="btn-text">Знайти</span></button>
-        </form>
-        <div class="nav-menu-list"> 
-        <button class="burger">
-          <span class="icon-menu-burger"></span>
-          <span class="close-burger icon-cross "></span>
-        </button>
-        <ul class="nav-menu-items">
-            <li class="nav-menu-item account-btn icon-user">Увiйти</li>
-            <form id="login-form" class="login-form">
-              <div class="user-id">
-                <label for="login-email" class="user-id-text">
-                <span role="button" class="login-email" tabindex="0">Email</span><span class="icon-arrow-down" aria-hidden="true"></span>
-                <span role="button" class="login-telefon" tabindex="0">Телефон</span>
-                </label>
-                <input name="login-email" type="email" pattern="^\S+@\S+.\S+$" id="login-email" autocomplete="username"  placeholder = 'Введіть email...'  class="user-input" required>
-              </div> 
-              <div class="user-id">
-                <label for="password-login" class="user-id-text">Пароль</label>
-                <div class="password-container"><input  name="login-password" type="password" autocomplete="current-password" 
- id="password-login" class="user-input" placeholder="Введіть пароль..." required>
-                <button type="button" class="show-hidden"><span class="icon-eye"></span></button>
-                </div>
-              </div>
-              <button type="submit" class="login-btn">Увiйти</button>
-              <a class="recovery-link">Забули пароль?</a>
-              <a class="registr-link">Зареєструватися</a>
-              <button class="close-login icon-cross"></button>
-            </form>
-            <form id="registr-form" class="registr-form">
-              <div class="user-id">
-                <label for="registr-email" class="user-id-text">
-                <span role="button" class="registr-email" tabindex="0">Email</span><span class="icon-arrow-down" aria-hidden="true"></span>
-                <span role="button" class="registr-telefon" tabindex="0">Телефон</span>
-                </label>
-                <input name="registr-email" type="email" id="registr-email" autocomplete="username" placeholder = 'Введіть email...' pattern="^\S+@\S+.\S+$" class="user-input" required>
-              </div> 
-              <div class="user-id">
-                <label for="password-registr" class="user-id-text">Пароль</label>
-                <div class="password-container"><input name="registr-password" type="password" autocomplete="current-password" 
- id="password-registr" class="user-input" placeholder="Введіть пароль..." required>
-                <button type="button" class="show-hidden"><span class="icon-eye"></span></button>
-                </div>
-              </div>
-              <button type="submit" class="registr-btn">Зареєструватися</button>
-              <a class="recovery-link">Забули пароль?</a>
-              <a href="#" class="login-link">Увiйти</a>
-              <button class="close-registr icon-cross"></button>
-              <div class="feedback">Регистрация прошла успешно</div>
-            </form>
-            <li class="nav-menu-item contact-btn icon-phone">Контакти</li>
-            <li class="nav-menu-item icon-heart"><a href="../HTML/favorites.html">Обране</a></li>
-            <li class="nav-menu-item icon-compare">Порiвняння</li>
-            <li class="nav-menu-item icon-shopping-cart">Кошик</li>
-        </ul>
-        </div>   
-    </div>
-  </header>
+   <div id="header"></div>
+    <script type="module">
+      import { initHeader } from '../src/header/header.js';
+      fetch('../src/header/header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('header').innerHTML = html;
+        initHeader();
+      });
+  </script>
   <main>
     <div class="main-container container">
         <div class="main-grid" id="main-container"></div>
@@ -86,25 +30,6 @@
   </main>
   <footer></footer>
   </div>
-      <div class="contact-menu">
-        <ul class="contact-list icon-address"><strong>Адреса</strong>
-          <li class="address">м.Вінниця,проспект Коцюбинського,13</li>
-          <li>"Центральний ринок"</li>
-          <li>"М'ясний павільйон", другий поверх</li>
-        </ul>
-        <ul class="contact-list icon-clock"><strong>Години праці</strong>
-          <li>Вівторок - неділя:9.00 - 16.00</li>
-          <li>Понеділок - Вихідний</li>
-        </ul>
-        <ul class="contact-list icon-phone"><strong>Контакти</strong>
-          <li class="life">063 436-79-91</li>
-          <li class="kyivstar">096 987-25-45</li>
-          <li class="telegram">063 436-79-91</li>
-          <li class="viber">063 436-79-91</li>
-          <li class="mail">perukitut@gmail.com</li>
-        </ul>
-        <button class="close-contact icon-cross"></button>
-    </div>
   <script type="module" src="../src/header/header.js"></script>
   <script type="module" src="../src/favorites/favorites.js"></script>
   </body>

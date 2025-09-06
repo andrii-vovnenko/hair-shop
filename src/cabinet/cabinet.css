@@ -1,0 +1,30 @@
+main{
+  background: #e8ddfa;
+}
+.main-container { }
+.user-option { 
+   padding: 1rem;
+   background: white;
+   width: 47%;
+   border-radius: 8px;
+   }
+.option-items {
+    line-height: 1.5;
+    color:  #7e57c2;
+    font-size: 3rem;
+    cursor: pointer;
+ }
+ .option-item:hover{
+   color: #ffeb3b;
+ }
+.option-item {
+    
+ }
+ @media (min-width: 1024px) {
+   .option-items{
+      font-size: 2rem;
+   }
+   .user-option{
+      width:20%;
+   }
+ }

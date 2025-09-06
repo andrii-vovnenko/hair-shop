@@ -1,0 +1,41 @@
+/* Main */
+
+main{
+  background: #e8ddfa;
+}
+.main-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+.card-link{
+  display: block;
+}
+.product-card {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #ccc;
+}
+.product-card img{
+  filter: brightness(80%);
+  transition: filter 0.3s ease;
+  cursor: pointer;
+}
+.product-card img:hover{
+  filter: brightness(100%);
+}
+.product-card div{
+  padding: 8px;
+}
+.product-card h3{
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.product-card h3:hover{
+  transform: scale(1.01);
+}
+.product-card p {
+  text-align: right;
+  font-weight: 700;
+  cursor: default;
+}

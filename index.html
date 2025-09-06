@@ -110,9 +110,10 @@
       <h1>У вас є якісь питання або потрібна порада? <span class="store-name">Ми тут для вас.</span> Зв'яжіться з нами будь-яким зручним для вас способом.</h1>
     </div>
     <div class="footer-content">
-    <div class="store">
+      <div class="store">
         <h1>Магазин</h1>
-        <ul class="contact-list icon-address"><strong>Адреса</strong>
+        <div class="contacts">
+           <ul class="contact-list icon-address"><strong>Адреса</strong>
           <li class="address">м.Вінниця,проспект Коцюбинського,13</li>
           <li>"Центральний ринок"</li>
           <li>"М'ясний павільйон", другий поверх</li>
@@ -128,6 +129,7 @@
           <li class="viber">063 436-79-91</li>
           <li class="mail">perukitut@gmail.com</li>
         </ul>
+        </div>
     </div>
     <div class="help-form">
       <h1>Напишіть нам</h1>
@@ -139,24 +141,23 @@
     </div>
     <form class="help-form-grid">
         <label>
-          Ім'я<br>
+          <span>Ім'я</span>
           <input type="text" id="name" name="user_name" autocomplete="name" pattern="^[A-Za-zА-Яа-яЁёІіЇїЄєҐґ\s]+$"
  placeholder="Ваше ім'я" class="name" required >
         </label>
         <label>
-          Email<br>
+          <span>Email</span>
           <input type="email" id="email" name="user_email" autocomplete="email" pattern="^\S+@\S+\.\S+$"  placeholder="Ваш email"  class="email" required>
         </label>
         <label>
-          Телефон<br>
+          <span>Телефон</span>
           <input type="tel" id="tel" name="user_tel" autocomplete="tel" pattern="^\+380\d{9}$" placeholder="+380..." class="tel">
         </label>
         <label>
-          Повідомлення<br>
+          <span>Повідомлення</span>
           <textarea id="message" name="user_message" placeholder="Ваше повідомлення..." class="message" required></textarea>
         </label>
         <button type="submit" class="form-button">Надіслати</button>
-        <a href="./HTML/gallery.html" class="btn-primary primary-footer">Подивитися колекцію</a>
       </form>
       </div>
     </div>
