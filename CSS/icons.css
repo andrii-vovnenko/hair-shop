@@ -43,9 +43,6 @@
 .icon-compare:before {
   content: "\e905";
 }
-.icon-compare-full:before {
-  content: "\e906";
-}
 .icon-cross:before {
   content: "\e907";
 }
@@ -76,7 +73,7 @@
 .icon-search:before {
   content: "\e910";
 }
-.icon-shopping-cart:before {
+.icon-cart:before {
   content: "\e911";
 }
 .icon-star:before {

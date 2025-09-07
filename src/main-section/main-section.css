@@ -12,14 +12,27 @@ main{
   display: block;
 }
 .product-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   border: 2px solid #ccc;
 }
+
 .product-card img{
   filter: brightness(80%);
   transition: filter 0.3s ease;
   cursor: pointer;
+  z-index: 1;
+}
+.remove-btn{
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  cursor: pointer;
+}
+.remove-btn:hover{
+  color: white;
 }
 .product-card img:hover{
   filter: brightness(100%);

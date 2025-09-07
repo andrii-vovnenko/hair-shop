@@ -28,6 +28,9 @@ main{
   left: 0;
   opacity: 0;
 }
+.action-btn{
+  font-size: 24px;
+}
 .action-btn.icon-heart {
   position: relative;
   opacity: 1;
@@ -41,11 +44,15 @@ main{
   transition: opacity 0.3s ease;
 }
 .action-btn.icon-compare.active{
-color:palevioletred;
-text-decoration: line-through;
-text-decoration-style: solid;
+background: #7e57c2;
+display: flex;
+justify-content: center;
+align-items: center;
+color: gold;
+border-radius: 50%;
+padding: 4px;
+font-size:20px;
 }
-
 .action-btn.icon-heart.active .icon-heart_full {
   opacity: 1;
 }
