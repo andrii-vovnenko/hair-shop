@@ -44,9 +44,6 @@
   50%  { opacity: 1; }
   100% { opacity: 0; }
 }
-
-
-
 .icon-arrow-left::before{
   color: #ffeb3b;
   font-size: 3rem;
@@ -132,41 +129,44 @@
 .nav-menu-item:hover{
   color: #ffeb3b;
   }
+  
   .icon{
-    padding-right: 5px;
-    }
-    .favorites{
+    margin-right: 3px;
+    } 
+    .icon.icon-heart{
+      opacity:1;
       position: relative;
+      display: inline-block;
+      line-height: 1.1;
+     }
+    .icon.icon-heart_full{
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      width: 100%;
+      height: 100%; 
     }
-    .cart{
-      position: relative;
+    .icon.icon-heart_full.active{
+      opacity: 1;
     }
     .favorites-count{
       color: white;
-      font-size: 1.2rem;
+      font-size: 22px;
       position: absolute;
-      top: 17%;
-      left: 30%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
-    .icon.icon-heart{
-      opacity:1;
-    }
-    .icon.icon-heart.active{
-      opacity:0;
-    }
-    .compare{
-      position: relative;
-    }
-    .icon.icon-compare{
+    .icon.icon-compare,
+    .icon.icon-cart{
       opacity: 1;
+      position: relative;
+      display: inline-block;
+      line-height: 1;
     }
-    .icon.icon-compare.active{
-      opacity:0;
-    }
-    .icon.icon-compare .compare-count{
-      opacity:0;
-    }
-  .compare-full{
+  .compare-full,
+  .cart-full{
     position: absolute;
     display: inline-block;
     height: 32px;
@@ -174,50 +174,27 @@
     border-radius: 50%;
     background: #7e57c2;
     opacity: 0;
-    top: 20%;
+    top: 0;
     left: 0;
   }
-  .compare-full.active{
-    opacity: 1;
-  }
-   .cart-full{
-    position: absolute;
-    display: inline-block;
-    height: 26px;
-    width: 26px;
-    border-radius: 50%;
-    background: #7e57c2;
-    opacity: 0;
-    top:15%;
-    left: 2%;
-  }
+  .compare-full.active,
   .cart-full.active{
     opacity: 1;
   }
-    .compare-count{
+   .compare-count,
+   .cart-count{
        color:white;
-      font-size: 1.2rem;
+      font-size: 22px;
       position: absolute;
-      top: -5%;
-      left: 35%;
-    }
-     .cart-count{
-       color:white;
-      font-size: 1.2rem;
-      position: absolute;
-      top: -20%;
-      left: 30%;
-     
-    }
-    .icon.icon-heart_full{
-      position: absolute;
-      top: 0;
-      left: 0;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -45%);
       opacity: 0;
     }
-    .icon.icon-heart_full.active{
-      opacity: 1;
-    }
+    .cart-full.active .cart-count,
+    .compare-full.active .compare-count{
+      opacity:1;
+    }   
 .contact-menu{
     display: none;
     }
@@ -515,14 +492,21 @@ justify-content: center;
 }
 /* Media */
 
-@media (max-width: 360px) {
+@media (max-width: 390px) {
  .nav-menu-items.active{
   width: 61dvw;
   transform: translateX(-47%);
   font-size: 1.5rem;
 }
-.nav-menu-item:before{
-    font-size: 1.5rem;
+.compare-full,
+.cart-full{
+  width: 24px;
+  height: 24px;
+}
+.favorites-count,
+.compare-count,
+.cart-count{
+  font-size: 18px;
 }
 
 }
@@ -530,37 +514,6 @@ justify-content: center;
   .burger{
     display: none;
   }
-  .compare-full.active{
-     background: #ffeb3b;
-    width: 21px;
-    height: 21px;
-    top: 5%;
-}
-  .cart-full.active{
-     background: #ffeb3b;
-    width: 18px;
-    height: 18px;
-    top:  -5%;
-    left: 2%;
-}
-  .compare-count{
-    color: #7e57c2;
-    font-size: 1rem;
-    top: 7%;
-    left: 30%;
-}
-  .cart-count{
-    color: #7e57c2;
-    font-size: 1rem;
-    top: 0;
-    left: 25%;
-}
-  .favorites-count{
-      color: #7e57c2;
-      top:10%;
-      left:22%;
-      font-size: 1rem;
-      }
   .nav-menu-items{
     width: 100%;
     position: relative;
@@ -571,8 +524,7 @@ justify-content: center;
     padding: 0;
     font-size: 20px;
   }
-
-  .search-form{
+.search-form{
     width: 100%;
   width:clamp(16rem, 26dvw, 31rem)
 }   
@@ -607,7 +559,18 @@ justify-content: center;
 .login-telefon{
   top:18%;
 }
-
+.compare-full,
+.cart-full{
+  width: 20px;
+  height: 20px;
+  background: #ffeb3b;
+}
+.favorites-count,
+.compare-count,
+.cart-count{
+  font-size: 18px;
+  color: #7e57c2;
+}
 }
 @media (orientation: landscape) and (max-height: 500px){
   .nav-menu-items.active{

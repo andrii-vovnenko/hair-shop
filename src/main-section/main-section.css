@@ -1,5 +1,4 @@
 /* Main */
-
 main{
   background: #e8ddfa;
 }
@@ -7,9 +6,6 @@ main{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1rem;
-}
-.card-link{
-  display: block;
 }
 .product-card {
   position: relative;
@@ -23,6 +19,7 @@ main{
   transition: filter 0.3s ease;
   cursor: pointer;
   z-index: 1;
+  width: 100%;
 }
 .remove-btn{
   position: absolute;
@@ -44,11 +41,12 @@ main{
   cursor: pointer;
   transition: transform 0.2s ease;
 }
-.product-card h3:hover{
-  transform: scale(1.01);
-}
 .product-card p {
   text-align: right;
   font-weight: 700;
   cursor: default;
 }
+
+
+
+

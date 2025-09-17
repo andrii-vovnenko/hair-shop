@@ -1,24 +1,25 @@
 
-/* Main */
-
 main{
   background: #e8ddfa;
+  height: 100%;
 }
 .main-grid{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1rem;
+  margin-bottom: clamp(24px, 2dvw, 32px);
  }
 .product-card{ 
   display: flex;
   flex-direction: column;
-  border: 2px solid #ccc;
+  background: #e8ddfa;
+  box-shadow: 0 0 0 2px #ccc;
 }
+
 .product-image-wrapper{
   position: relative;
 }
 .product-image{
-  display: block;
   width: 100%;
   transition: opacity 0.3s ease;
  }
@@ -26,6 +27,12 @@ main{
   position: absolute;
   top: 0;
   left: 0;
+  opacity: 0;
+}
+.product-image-wrapper:hover .product-image.hover {
+  opacity: 1;
+}
+.product-image-wrapper:hover .product-image.default {
   opacity: 0;
 }
 .action-btn{
@@ -44,30 +51,14 @@ main{
   transition: opacity 0.3s ease;
 }
 .action-btn.icon-compare.active{
-background: #7e57c2;
-display: flex;
-justify-content: center;
-align-items: center;
-color: gold;
-border-radius: 50%;
-padding: 4px;
-font-size:20px;
+color: lime;
 }
 .action-btn.icon-heart.active .icon-heart_full {
   opacity: 1;
 }
-.product-image-wrapper:hover .product-image.hover {
-  opacity: 1;
-}
-.product-image-wrapper:hover .product-image.default {
-  opacity: 0;
-}
 .product-info {
   padding: 8px;
- }
-.product-title {
-  font-weight: 500;
-  display: block;
+  position: relative;
  }
 .product-price {
   text-align: right;
@@ -85,4 +76,38 @@ font-size:20px;
  .action-btn:hover{
   transform: translateY(1px);
  }
+.product-description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(200%);
+  padding: 8px;
+  background: #e8ddfa;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  box-shadow:
+   -2px 0 0 #ccc,
+    2px 0 0 #ccc,
+    0 2px 0 #ccc;
+}
+.product-info:hover .product-description {
+  opacity: 1;
+  visibility: visible;
+  z-index: 3;
+}
+.product-card:hover{
+  box-shadow:
+   -2px 0 0 #ccc,
+    2px 0 0 #ccc,
+    0 -2px 0 #ccc;
+}
+.product-card.hidden{
+  display: none;
+}
 
+@media (min-width: 1024px) {
+  .main-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+  }

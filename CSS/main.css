@@ -121,9 +121,7 @@ main{
   font-weight: 700;
 }
 .storefront{
-  padding-bottom: clamp(1rem, 2dvw, 2rem);
   padding-top: clamp(1rem, 2dvw, 2rem);;
-  margin-bottom: clamp(0.8rem, 1dvw, 2rem);
 }
 .storefront-img{
   border-radius: 20px;
@@ -274,8 +272,8 @@ label:nth-child(4){
   border-radius: 7px;
   margin-top: clamp(0.5rem, 1dvw, 1rem);
 }
-.message {
-  font-size: clamp(0.8rem, 1.5dvw, 1.5rem);
+.letter {
+  font-size: clamp(1.2rem, 1.5dvw, 1.5rem);
   width:100%;
   height: clamp(8rem, 10dvw, 25rem);
   padding: 0.6rem;
@@ -399,13 +397,6 @@ label:nth-child(4){
   80% { transform: translateX(2px); }
   100% { transform: translateX(0); }
 }
-
-
-
-
-
-
-
 @media (max-width: 1024px) {
    .submain-container {
     grid-template-columns: 1fr;

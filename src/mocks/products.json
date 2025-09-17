@@ -2,25 +2,49 @@
     {
         "id" : 1,
         "image" : "../assets/img/example.jpg",
+        "image-secondary": "../assets/img/example_2.jpg",
+        "cap-image": "../assets/img/cap.jpg",
         "title" : "Перука з термоволокна,колір чорний,\n довжина 50см,густота 100%.",
-        "price" : 1000
+        "price" : 1000,
+        "description": "Перука з термоволокна,колір чорний,довжина 50см,густота 100%.",
+        "black": "../assets/img/black.jpg",
+        "blond": "../assets/img/blond.jpg",
+        "red":  "../assets/img/rude.jpg"
         },
     {
         "id" : 2,
         "image" : "../assets/img/example_2.jpg",
+        "image-secondary": "../assets/img/example.jpg",
+        "cap-image": "../assets/img/cap.jpg",
         "title" : "Перука з термоволокна,колір чорний,\n довжина 50см,густота 100%.",
-        "price" : 2000
+        "price" : 2000,
+        "description": "Перука з термоволокна,колір чорний,довжина 50см,густота 100%.",
+        "black": "../assets/img/black.jpg",
+        "blond": "../assets/img/blond.jpg",
+        "red":  "../assets/img/rude.jpg"
         },
         {
         "id" : 3,
         "image" : "../assets/img/example.jpg",
-        "title" : "Перука з термоволокна,колір чорний,\n довжина 50см,густота 100%.",
-        "price" : 3000
+        "image-secondary": "../assets/img/example_2.jpg",
+        "cap-image": "../assets/img/cap.jpg",
+        "title" : "Перука з термоволокна,колір блонд,\n довжина 100см,густота 100%.",
+        "price" : 3000,
+        "description": "Перука з термоволокна,колір блонд,довжина 100см,густота 100%.",
+        "black": "../assets/img/black.jpg",
+        "blond": "../assets/img/blond.jpg",
+        "red":  "../assets/img/rude.jpg"
         },
         {
         "id" : 4,
-        "image" : "../assets/img/example_2.jpg",
-        "title" : "Перука з термоволокна,колір чорний,\n довжина 50см,густота 100%.",
-        "price" : 4000
+        "image" : "../assets/img/example.jpg",
+        "image-secondary": "../assets/img/example_2.jpg",
+        "cap-image": "../assets/img/cap.jpg",
+        "title" : "Перука з термоволокна,колір блонд,\n довжина 100см,густота 100%.",
+        "price" : 4000,
+        "description": "Перука з термоволокна,колір блонд,довжина 100см,густота 100%.",
+        "black": "../assets/img/black.jpg",
+        "blond": "../assets/img/blond.jpg",
+        "red":  "../assets/img/rude.jpg"
         }
-]
+    ]
