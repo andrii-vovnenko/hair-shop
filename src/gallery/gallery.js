@@ -178,7 +178,7 @@ function addToCart(mockDB) {
 
   let cart = user.cart.map(Number);
 
-  document.querySelectorAll('.action-btn.icon-cart').forEach((btn) => {
+  document.querySelectorAll('.cart-button').forEach((btn) => {
     const id = parseInt(btn.dataset.id, 10);
     
 

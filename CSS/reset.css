@@ -41,6 +41,17 @@ button{
   border: none;
   background: none;
   padding: 0;
+  cursor: pointer;
+  background-color: transparent;
+  appearance: none;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+button:active,
+button:focus{
+  background-color: transparent;
+  box-shadow: none;
+  outline: none;
 }
 html{
   scroll-behavior: smooth;

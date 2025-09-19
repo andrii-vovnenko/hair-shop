@@ -25,9 +25,9 @@ function cardCreate() {
           <button class="remove-btn" data-id="${product.id}" title="Видалити з кошика">
             <span class="icon-cross"></span>
           </button>
-          <a href="./cabinet.html"><img src="${product.image}" alt="${product.title}"/></a>
+          <a href="./product.html?id=${product.id}"><img src="${product.image.primary_image}" alt="${product.title}"/></a>
           <div>
-            <a href="./cabinet.html"><h3>${product.title}</h3></a>
+            <a href="./product.html?id=${product.id}"><h3>${product.title}</h3></a>
             <p>${product.price} грн</p>
           </div>
         `;

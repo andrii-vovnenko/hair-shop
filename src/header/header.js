@@ -1,4 +1,4 @@
-import { addTo,getFavoritesCount,getCompareCount,getCartCount } from '../gallery/gallery.js';
+import { getFavoritesCount,getCompareCount,getCartCount } from '../gallery/gallery.js';
 import { worker } from '../mocks/browser.js';
 import {registrUser,loginUser,saveUser} from '../mocks/users.js';
 worker.start();
@@ -220,7 +220,6 @@ export function initHeader() {
   registrUser();
   loginUser();
   saveUser();
-  addTo();
   getFavoritesCount();
   getCompareCount();
   getCartCount();

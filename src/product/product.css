@@ -1,20 +1,23 @@
 main{
   background: #e8ddfa;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
-.main-container{
+.product-page{
   display: flex;
   flex-direction: column;
 }
 .primary-image{
   width: 100%;
-   padding: 8px 8px 4px 8px;
+  padding: 8px 8px 4px 8px;
+  cursor: pointer;
   }
 .product-img-container{
   display: flex;
   flex-direction: column;
   border: 2px solid #ccc;
   color: #7e57c2;
+  justify-content: space-between;
+  height: 100%;
 }
 .secondary-images { 
   display: flex;
@@ -24,6 +27,7 @@ main{
 
 .secondary-img { 
   width: 60px;
+  cursor: pointer;
 }
 .product-info{
   padding: 8px 0;
@@ -32,6 +36,7 @@ main{
   text-align: right;
    padding: 8px;
    font-weight: 700;
+   font-size: clamp(1.1rem, 1.5dvw, 1.8rem);
 }
 .action-btn-container{
   display: flex;
@@ -39,14 +44,13 @@ main{
   justify-content: space-around;
   width: 100%;
   padding: 8px;
-  cursor: pointer;
-  pointer-events: none;
 }
 .under-image{
   display: flex;
 }
 .action-btn{
   font-size: 24px;
+  cursor: pointer;
 }
 .action-btn.icon-heart {
   position: relative;
@@ -66,9 +70,37 @@ color: lime;
 .action-btn.icon-heart.active .icon-heart_full {
   opacity: 1;
 }
-.color-image-container{
+.color-container{
   border: 2px solid #ccc;
   padding: 8px;
+  display: flex;
+  gap: 0.5rem;
+  }
+.color-img{
+  cursor: pointer;
+  width: 100%;
+  padding: 4px;
+  margin: -4px;
+  }
+.color-img.active{
+  border: 2px solid #ccc;
+}
+.main-color h3{
+  font-size: 1.1rem;
+  color: #7e57c2;
+}
+.color-img-container{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(45px, 1fr));
+  gap: 8px;
+  padding-top: 28px;
+}
+.main-color-img{
+  width: 100%;
+  margin-top: 8px;
+  aspect-ratio: 1 / 1.55;
+  cursor: pointer;
 }
 .add-to-cart-form{
   display: flex;
@@ -83,34 +115,120 @@ color: lime;
   color: #7e57c2;
 }
 #quantity{
-  width: 60%;
+  width: 67%;
   color: #7e57c2;
+  text-align: right;
 }
-.icon-cart:before{
-  display: none;
-}
-.add-to-cart-form .action-btn{
+.cart-button{
   background: gold;
   border-radius: 16px;
   width: 100%;
   color: #7e57c2;
+  padding: 8px;
+  font-size: 1.3rem;
 }
-@media (min-width: 1024px) {
-  .add-to-cart-form{
-    justify-content: space-between;
-    font-size: 1.5rem;
-  }
-  #quantity{
-  width: 50%;
+.product-description{
+  border-top: 2px solid #ccc;
+  padding-top: 8px;
+}
+.description-title{
+  font-size: 1.6rem;
+}
+.attributes{
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+.attribute-key{
+  font-weight: 700;
   color: #7e57c2;
-  text-align: right;
 }
-.icon-cart:before{
+.detail-description{
+  line-height: 1.3;
+}
+.slider {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  background: rgba(0,0,0,0.85);
   display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+.slider.active {
+  display: flex;
+}
+.slide-img {
+  width: 90dvw;
+  max-height: 90dvh;
+  }
+.slider-prev,
+.slider-next,
+.slider-close {
+  position: absolute;
+  color: #7e57c2;
+  font-size: 2rem;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 10;
+  }
+.slider-prev { left: 10px; top: 50%; transform: translateY(-50%); }
+.slider-next { right: 10px; top: 50%; transform: translateY(-50%); }
+.slider-close { top: 8px; right: 8px; }
+
+@media (min-width: 1024px) {
+.product-content * {
+  margin: 2px 0;
+}
+  .product-info h3{
+  font-size: clamp(1.1rem, 1.5dvw, 1.8rem);
+  margin-bottom: 8px;
+}
+.product-characteristics{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.product-img-container{
+  width: 30%;
+}
+.product-content{
+  width: 70%;
+}
+.price{
+  text-align: left;
+   padding: 0;
+}
+.add-to-cart-form{
+  justify-content: space-between;
+}
+#quantity{
+  width: 37%;
+  color: #7e57c2;
 }
 .add-to-cart-form .action-btn{
   background: gold;
   border-radius: 16px;
   width: 50%; 
+  font-size:clamp(1.1rem, 1.5dvw, 1.8rem);
 }
+.slide-img {
+  width: auto;
+  height: 90dvh;
+  }
+  .detail-description{
+    margin-top: 2rem;
+  }
+.color-img-container{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  gap: 8px;
+  padding-top: 21px;
+}
+.attributes{
+  font-size: clamp(1.1rem, 1.5dvw, 1.8rem);
+}
+
 }
